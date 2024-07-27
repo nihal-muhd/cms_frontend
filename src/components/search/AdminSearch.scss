@@ -1,0 +1,25 @@
+.search-icon {
+  background-image: url(../../assets/svg/search.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 28px;
+  background-size: contain;
+}
+.search-input {
+  border: none;
+  outline: none;
+  background-color: #f9fafb;
+}
+.search-input::placeholder {
+  color: #737791;
+}
+.search-wrap {
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 223px;
+  padding: 10px;
+  border-radius: 5px;
+}
