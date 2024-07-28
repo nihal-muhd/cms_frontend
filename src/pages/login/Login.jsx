@@ -3,9 +3,18 @@ import { useForm } from "react-hook-form";
 import { BASE_URL, API_URL, API_VERSION } from "../../constants/environment";
 import axios from "axios";
 import "./Login.scss";
+import { toast } from "react-toastify";
+import { useCookies } from "react-cookie";
+import getUserInfo from "../../utils/userInfo";
+import { setUserInfo } from "../../store/userSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [visibleErrors, setVisibleErrors] = useState(null);
+  const [cookies, setCookie] = useCookies(["token"]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -20,7 +29,20 @@ const Login = () => {
           data,
         }
       );
-    } catch (error) {}
+      if (response) {
+        const { token } = response.data;
+        setCookie("token", token, {
+          path: "/admin",
+          expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        });
+        const userInfo = await getUserInfo(token);
+        dispatch(setUserInfo(userInfo));
+        toast.success(response.data.message);
+        navigate("/admin");
+      }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   useEffect(() => {
