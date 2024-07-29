@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const AdminAboutUs = () => {
-  return (
-    <div>
-      admin about us
-    </div>
-  )
-}
+  return <div>admin about us</div>;
+};
 
-export default AdminAboutUs
+export default AdminAboutUs;

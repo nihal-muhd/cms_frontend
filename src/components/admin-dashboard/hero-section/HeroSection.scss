@@ -1,0 +1,36 @@
+.hero-section-wrap {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.hero-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title {
+  color: #151d48;
+  font-size: 20px;
+}
+.section-btn {
+  height: 30px;
+  width: 70px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.hero-content-wrap {
+  display: flex;
+  gap: 10px;
+}

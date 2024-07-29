@@ -1,0 +1,17 @@
+.component-wrapper {
+  width: 50%;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.image-component {
+  display: flex;
+  justify-content: center;
+}
+.title-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
